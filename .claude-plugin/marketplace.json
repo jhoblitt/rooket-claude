@@ -1,0 +1,18 @@
+{
+  "name": "rooket-claude",
+  "description": "Claude Code plugins for rooket (github.com/jhoblitt/rooket): driving its disposable one-worker Rook clusters on kind without ever touching the ambient kubectl context",
+  "owner": {
+    "name": "Joshua Hoblitt",
+    "url": "https://github.com/jhoblitt"
+  },
+  "plugins": [
+    {
+      "name": "rooket",
+      "source": "./plugins/rooket",
+      "description": "Brings up, reaches, diagnoses and tears down rooket clusters through rooket alone, outside the sandbox, without disturbing another session's cluster",
+      "author": {
+        "name": "Joshua Hoblitt"
+      }
+    }
+  ]
+}
