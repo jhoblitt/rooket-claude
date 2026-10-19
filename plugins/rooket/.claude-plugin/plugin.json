@@ -1,7 +1,7 @@
 {
   "name": "rooket",
   "displayName": "Rooket",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Drive rooket's disposable one-worker Rook clusters on kind: bring-up and readiness, reaching a cluster only through rooket and never the ambient kubectl context, running cluster commands outside the Claude Code sandbox, diagnostics, teardown or leaving a cluster up, and coexisting with other sessions' clusters",
   "author": {
     "name": "Joshua Hoblitt",
