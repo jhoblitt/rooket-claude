@@ -18,6 +18,16 @@ Inside Claude Code:
 /plugin install rooket@rooket-claude
 ```
 
+To pick up a new release later:
+
+```sh
+claude plugin marketplace update rooket-claude
+claude plugin update rooket@rooket-claude
+```
+
+then restart, or run `/reload-plugins` in running sessions. The marketplace
+step alone only refreshes the index; it does not update the installed plugin.
+
 ## Usage
 
 The `rooket` skill loads for any work that brings up, populates, reaches,
@@ -31,6 +41,14 @@ commitlint enforces this on every pull request. Every GitHub Action is pinned
 to a commit SHA: run `pinact run` after editing a workflow and `actionlint`
 before committing it. Where a `Makefile` is present, `make check` is the local gate,
 `make tools` installs the pinned linter, and that pin lives in the `Makefile`.
+
+Releasing is automated: on each merge to `main`,
+[semantic-release](https://github.com/semantic-release/semantic-release)
+derives the next version from the commit types in the changeset (`fix:`,
+`docs:`, `refactor:`, `perf:` → patch; `feat:` → minor; a breaking change →
+major; other types cut no release), writes it into the plugin manifest and
+`CHANGELOG.md`, tags, and publishes a GitHub release. Never bump the plugin
+version in a pull request — the release commit owns that field.
 
 ## License
 
